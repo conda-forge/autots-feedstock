@@ -1,5 +1,5 @@
 {% set name = "autots" %}
-{% set version = "0.4.2" %}
+{% set version = "0.5.0" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/AutoTS-{{ version }}.tar.gz
-  sha256: e25005ee907d10994652e40ba925c07ce1ee74693eab88822b7f917d124dec82
+  sha256: 10aedcdaa2ce0a3913e572abeb75ef2b188c461065aa4d9cb2897c6bd60839a4
 
 build:
   number: 0
