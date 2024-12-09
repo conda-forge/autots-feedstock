@@ -1,31 +1,32 @@
 {% set name = "autots" %}
-{% set version = "0.6.16" %}
-
+{% set version = "0.6.17" %}
+{% set python_min = "3.9" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 43ce08a0a5ed4a2306ec468236ff1e9e6e6f720cddb97f2b5b1af8b3a4d40e1a
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 205dfff9324ebdc6e73c3f5527c095eaa4241090fe26960a032e9187f5a15564
 
 build:
   number: 0
   noarch: python
+  #  script: python -m build --wheel --outdir dist . && {{ PYTHON }} -m pip install dist/*.whl -vv
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
+    - python {{ python_min }}
     - pip
-    - python >=3.7
+    - setuptools
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - numpy >=1.14.6
     - pandas >=0.25.*
     - scikit-learn >=0.20.*
     - statsmodels >=0.10.*
-    - requests
 
 test:
   imports:
@@ -34,6 +35,7 @@ test:
   commands:
     - pip check
   requires:
+    - python {{ python_min }}
     - pip
 
 about:
