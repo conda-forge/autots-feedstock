@@ -1,5 +1,5 @@
 {% set name = "autots" %}
-{% set version = "1.0.4" %}
+{% set version = "1.0.5" %}
 {% set python_min = "3.9" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: d5b34130ac1467bc63795332b7573e8c849e753852565e8fbc5aadd9bd9791fd
+  sha256: eb6c23c8db45bbb41363fa5d20aa7e69135ddd8ad0b3b003893b169ff2bc1032
 
 build:
   number: 0
